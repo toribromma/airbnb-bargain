@@ -17,8 +17,8 @@ return (
           <div className="col s12 center-align">
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
-             
             </h4>
+            <h2>Find an Airbnb listing</h2>
 
             <Search/>
 
