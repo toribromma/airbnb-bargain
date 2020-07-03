@@ -14,7 +14,7 @@ class Navbar extends Component {
               className="col s5 brand-logo center black-text"
             >
               <i className="material-icons">home</i>
-              property bargain
+              air bnb bargain
             </Link>
           </div>
         </nav>

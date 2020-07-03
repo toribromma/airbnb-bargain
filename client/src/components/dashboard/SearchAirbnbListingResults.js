@@ -14,7 +14,7 @@ class SearchAirbnbListingResults extends Component {
     render() {
         return(
             <div className="row">
-            <div class="col s12 m5">
+            <div class="col s12 m6">
                 <h2 class="header">Search Results</h2>
                 <div class="card horizontal">
                 <div class="card-image">
