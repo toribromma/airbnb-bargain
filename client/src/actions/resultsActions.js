@@ -12,14 +12,14 @@ export const fetchResultsPending = () => {
 
 export const fetchResultsSuccess = results => {
     return {
-        type: FETCH_RESULTS_SUCCESS
+        type: FETCH_RESULTS_SUCCESS,
         payload: results
     };
 };
 
 export const fetchResultsError = error => {
     return {
-        type: FETCH_RESULTS_ERROR
+        type: FETCH_RESULTS_ERROR,
         payload: error
     }
 }
