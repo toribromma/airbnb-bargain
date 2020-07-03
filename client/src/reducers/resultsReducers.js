@@ -19,7 +19,7 @@ export default function(state = initialState, action) {
                 pending: false,
                 results: action.payload
             }
-        case FETCH_RESUULTS_ERROR:
+        case FETCH_RESULTS_ERROR:
             return {
                 ...state,
                 pending: false,
@@ -30,6 +30,6 @@ export default function(state = initialState, action) {
     }
 }
 
-export const getProducts = state => state.results;
-export const getProductsPending = state => state.pending;
-export const getProductsError = state => state.error;
+export const getResults = state => state.results;
+export const getResultsPending = state => state.pending;
+export const getResultsError = state => state.error;

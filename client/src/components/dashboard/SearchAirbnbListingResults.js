@@ -3,12 +3,18 @@ import axios from 'axios';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import house from "../../images/house.jpg"
+import {getProductsError, getProducts, getProductsPending} from '../../reducers/resultsReducers';
 class SearchAirbnbListingResults extends Component {
     constructor() {
         super();
-        this.state = {
-            results: ""
-        }
+        this.shouldComponentRender = this.shouldComponentRender.bind(this);
+    }
+
+    shouldComponentRender() {
+        const {pending} = this.props;
+        if(this.pending === false) return false;
+        // more tests
+        return true;
     }
     
     render() {

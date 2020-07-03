@@ -1,7 +1,8 @@
 import React, {Component} from "react"
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-
+import { bindActionCreators } from 'redux';
+import fetchResultsAction from "../../actions/fetchResults";
 class SearchAirbnbListing extends Component {
     constructor() {
         super();
@@ -12,9 +13,23 @@ class SearchAirbnbListing extends Component {
         }
     }
 
+
+
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value });
       };
+
+    onSubmit = e => {
+        e.preventDefault();
+        const searchData = {
+            selectedState: this.state.selectedState,
+            selectedCity: this.state.selectedCity,
+            selectedZipCode: this.state.selectedZipCode
+        };
+        this.props.fetchResults()
+
+        
+    };
 
     states = ["AK", "AL", "AR", "AS", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MP", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UM", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"]
 
@@ -26,7 +41,7 @@ class SearchAirbnbListing extends Component {
             <div className="card-panel">
                 <span class="card-title"><b>Find an Airbnb Listing</b></span>
                 <div class="row">
-                    <form class="col s12">
+                    <form onSubmit={this.onSubmit} class="col s12">
                     <div class="row">
                         <div class="input-field col s4">
                         <i class="material-icons prefix">location_city</i>
@@ -64,9 +79,14 @@ SearchAirbnbListing.propTypes = {
   };
 
 const mapStateToProps = state => ({
-
+    search: state.search
   });
 
+  const mapDispatchToProps = dispatch => bindActionCreators({
+    fetchResults: fetchResultsAction
+}, dispatch)
+
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(SearchAirbnbListing);
