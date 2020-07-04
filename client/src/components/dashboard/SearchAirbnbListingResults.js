@@ -3,7 +3,8 @@ import axios from 'axios';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import house from "../../images/house.jpg"
-import {getProductsError, getProducts, getProductsPending} from '../../reducers/resultsReducers';
+import LoadingSpinner from "../layout/Spinner.js";
+import {getResultsError, getResults, getResultsPending} from '../../reducers/resultsReducers';
 class SearchAirbnbListingResults extends Component {
     constructor() {
         super();
@@ -16,25 +17,30 @@ class SearchAirbnbListingResults extends Component {
         // more tests
         return true;
     }
+
     
     render() {
+        const {results, error, pending} = this.props;
+        if(results === undefined || results.length === 0 || !this.shouldComponentRender()) {
+            return <LoadingSpinner/>
+        } else {
         return(
             <div className="row">
             <div class="col s12 m6">
                 <h2 class="header">Search Results</h2>
                 <div class="card horizontal">
                 <div class="card-image">
-                    <img src={house}/>
+                    <img src={this.props.results[0].image}/>
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
-                    <h4><b>The Mansion House</b></h4>
-                    <h5>4556 Beverly Hills Lane, Los Angeles California</h5>
+                    <h4><b>{results[0].name}</b></h4>
+                    <h5>{results[0].address}</h5>
                     <ul class="collection">
-                    <li class="collection-item">Price per night: $120</li>
-                    <li class="collection-item"># of Baths: 2</li>
-                    <li class="collection-item"># of Beds: 2</li>
-                    <li class="collection-item"># of People: 4</li>
+                    <li class="collection-item">Price per night: {results[0].night_price}</li>
+                    <li class="collection-item"># of Baths: {results[0].num_of_baths}</li>
+                    <li class="collection-item"># of Beds: {results[0].num_of_rooms}</li>
+                    <li class="collection-item"># of People: {results[0].capacity_of_people}</li>
 
                     </ul>
                     </div>
@@ -48,13 +54,16 @@ class SearchAirbnbListingResults extends Component {
         )
     }
 }
+}
 
 SearchAirbnbListingResults.propTypes = {
 
   };
 
 const mapStateToProps = state => ({
-
+    error: getResultsError(state),
+    results: getResults(state),
+    pending: getResultsPending(state)
   });
 
 export default connect(
