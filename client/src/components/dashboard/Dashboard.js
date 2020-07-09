@@ -22,7 +22,6 @@ return (
         </div>
             <SearchAirbnbListing/>
             <SearchAirbnbListingResults/>
-            <SearchAirbnbListingResults/>
             <button
               style={{
                 width: "150px",

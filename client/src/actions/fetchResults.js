@@ -10,7 +10,7 @@ const fetchResults = (searchData) => dispatch => {
         "headers":{
         "content-type":"application/octet-stream",
         "x-rapidapi-host":"mashvisor-api.p.rapidapi.com",
-        "x-rapidapi-key":`"${process.env.REACT_APP_MV_KEY}"`,
+        "x-rapidapi-key": "",
         "useQueryString":true
         },"params":{
         "zip_code":"90210",
