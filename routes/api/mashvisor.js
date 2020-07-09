@@ -1,6 +1,9 @@
+require("dotenv").config();
+var axios = require("axios");
 const express = require("express");
 const router = express.Router();
 const keys = require("../../config/keys");
+
 
 router.get("/search", (req, res) => {
 
@@ -10,7 +13,7 @@ router.get("/search", (req, res) => {
         "headers":{
         "content-type":"application/octet-stream",
         "x-rapidapi-host":"mashvisor-api.p.rapidapi.com",
-        "x-rapidapi-key": "",
+        "x-rapidapi-key": process.env.REACT_APP_MV_KEY,
         "useQueryString":true
         },"params":{
         "zip_code":"90210",
@@ -20,10 +23,11 @@ router.get("/search", (req, res) => {
         "state":"CA"
         }
         })
-        .then((res)=> {
-            return res
+        .then(function (response) {
+            console.log(response.data.content.properties)
+            console.log("hey")
         })
-
+    
 })
 
 module.exports = router;

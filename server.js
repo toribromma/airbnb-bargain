@@ -4,12 +4,13 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
 const app = express();
+const mashvisor = require("./routes/api/mashvisor")
 
 
 // Bodyparser middleare
 app.use(
   bodyParser.urlencoded({
-    extended: false
+    extended: true
   })
 );
 app.use(bodyParser.json());
@@ -30,6 +31,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+app.use("/api/mashvisor", mashvisor);
 
 
 
