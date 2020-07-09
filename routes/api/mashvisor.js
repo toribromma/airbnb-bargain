@@ -25,7 +25,7 @@ router.get("/search", (req, res) => {
         })
         .then(function (response) {
             console.log(response.data.content.properties)
-            console.log("hey")
+            console.log("ho")
         })
     
 })

@@ -5,7 +5,7 @@ import { FETCH_RESULTS_ERROR, FETCH_RESULTS_SUCCESS } from './types';
 const fetchResults = (searchData) => dispatch => {
     dispatch(fetchResultsPending());
       axios
-      .get("api/mashvisor/search")
+      .get("/api/mashvisor/search")
         .then((response)=>{
           console.log(response)
           dispatch({
