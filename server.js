@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
-const app = express();
 const mashvisor = require("./routes/api/mashvisor")
+const app = express();
+
 
 
 // Bodyparser middleare
@@ -13,7 +14,8 @@ app.use(
     extended: true
   })
 );
-app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/*+json' }))
+
 // DB Config
 const db = require("./config/keys").mongoURI;
 // Connect to MongoDB

@@ -19,9 +19,9 @@ class SearchAirbnbListing extends Component {
     onSubmit = e => {
         e.preventDefault();
         const searchData = {
-            selectedState: this.state.selectedState,
-            selectedCity: this.state.selectedCity,
-            selectedZipCode: this.state.selectedZipCode
+            state: this.state.selectedState,
+            city: this.state.selectedCity,
+            zip: this.state.selectedZipCode
         };
         // console.log(searchData)
         this.props.fetchResults(searchData)
@@ -43,7 +43,7 @@ class SearchAirbnbListing extends Component {
                     <div class="row">
                         <div class="input-field col m4 s12">
                         <i class="material-icons prefix">location_city</i>
-                        <input id="icon_prefix" name="selectedCity" value={this.selectedCity} onChange={this.onChange} type="text" class="validate"/>
+                        <input id="icon_prefix" name="selectedCity" value={this.state.selectedCity} onChange={this.onChange} type="text" class="validate"/>
                         <label for="icon_prefix">City</label>
                         </div>
                         <div class="input-field col m4 s12">
@@ -55,7 +55,7 @@ class SearchAirbnbListing extends Component {
                         </select>
                         </div>
                         <div class="input-field col m4 s12">
-                        <input name="selectedZipCode" value={this.selectedCity} onChange={this.onChange} type="text" class="validate"/>
+                        <input name="selectedZipCode" value={this.state.selectedZipCode} onChange={this.onChange} type="text" class="validate"/>
                         <label>Zip Code</label>
                         </div>
                     </div>

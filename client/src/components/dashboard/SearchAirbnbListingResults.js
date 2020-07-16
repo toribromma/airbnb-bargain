@@ -30,13 +30,14 @@ class SearchAirbnbListingResults extends Component {
             results.map(result => {
                 return (
                 <div className="row">
-                <div class="col s12 m6">
+                <div class="col s12 m12">
                     {/* <h2 class="header">Search Results</h2> */}
-                    <div class="card">
+                    <div class="card center-align">
                     <div class="card-image">
-                        <img width="200" src={result.image}/>
+                        <img src={result.image}/>
                     </div>
                     <div class="card-stacked">
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                         <div class="card-content">
                         <h4><b>{result.name}</b></h4>
                         <h5>{result.address}</h5>
