@@ -9,9 +9,10 @@ class Navbar extends Component {
             <Link
               to="/"
               style={{
-                fontFamily: "monospace"
+                fontFamily: "monospace",
+                fontSize:"10px"
               }}
-              className="col s5 brand-logo center black-text"
+              className="col s12 brand-logo center black-text nav-font"
             >
               <i className="material-icons">home</i>
               air bnb bargain

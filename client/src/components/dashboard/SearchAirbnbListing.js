@@ -7,14 +7,11 @@ class SearchAirbnbListing extends Component {
     constructor() {
         super();
         this.state = {
-            selectedState: "",
+            selectedState: "AK",
             selectedCity: "",
             selectedZipCode: ""
         }
     }
-
-
-
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value });
       };
@@ -26,7 +23,8 @@ class SearchAirbnbListing extends Component {
             selectedCity: this.state.selectedCity,
             selectedZipCode: this.state.selectedZipCode
         };
-        this.props.fetchResults()
+        // console.log(searchData)
+        this.props.fetchResults(searchData)
 
         
     };
@@ -43,12 +41,12 @@ class SearchAirbnbListing extends Component {
                 <div class="row">
                     <form onSubmit={this.onSubmit} class="col s12">
                     <div class="row">
-                        <div class="input-field col s4">
+                        <div class="input-field col m4 s12">
                         <i class="material-icons prefix">location_city</i>
                         <input id="icon_prefix" name="selectedCity" value={this.selectedCity} onChange={this.onChange} type="text" class="validate"/>
                         <label for="icon_prefix">City</label>
                         </div>
-                        <div class="input-field col s4">
+                        <div class="input-field col m4 s12">
                         <select onChange={this.onChange} name="selectedState" value={this.state.selectedState} class="browser-default">
                         <option disabled selected>Choose your option</option>
                         {this.states.map(function(object, i){
@@ -56,7 +54,7 @@ class SearchAirbnbListing extends Component {
                         })}
                         </select>
                         </div>
-                        <div class="input-field col s4">
+                        <div class="input-field col m4 s12">
                         <input name="selectedZipCode" value={this.selectedCity} onChange={this.onChange} type="text" class="validate"/>
                         <label>Zip Code</label>
                         </div>
@@ -88,5 +86,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
 )(SearchAirbnbListing);

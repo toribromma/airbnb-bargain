@@ -2,24 +2,27 @@ import {fetchResultsPending, fetchResultsSuccess, fetchResultsError} from './res
 import axios from "axios";
 import { FETCH_RESULTS_ERROR, FETCH_RESULTS_SUCCESS } from './types';
 
-const fetchResults = (searchData) => dispatch => {
+
+const fetchResults = searchData => async dispatch => {
     dispatch(fetchResultsPending());
-      axios
-      .get("/api/mashvisor/search")
-        .then((response)=>{
-          console.log(response)
-          dispatch({
-              type: FETCH_RESULTS_SUCCESS,
-              payload: response.data.content.properties
-          })
+    console.log("hi")
+    console.log(searchData)
+    // setTimeout(() => {
+     await axios.get("/api/mashvisor/search", searchData)
+      .then(response => {
+        console.log(response.data)
+        dispatch(fetchResultsSuccess(response.data))
+      })
+      .catch((error)=>{
+        console.log(error)
+        dispatch({
+            type: FETCH_RESULTS_ERROR,
+            payload: error
         })
-        .catch((error)=>{
-          console.log(error)
-          dispatch({
-              type: FETCH_RESULTS_ERROR,
-              payload: error
-          })
-        })
+      })
+    // }, 1000)
+    
+
 }
 
 export default fetchResults;
