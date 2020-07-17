@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const mashvisorRoutes = require("./mashvisor");
-const userRoutes = require("./users");
+const usersRoutes = require("./users");
 
 router.use("/mashvisor", mashvisorRoutes);
-router.use("/users", userRoutes);
+router.use("/users", usersRoutes);
 
 module.exports = router;
