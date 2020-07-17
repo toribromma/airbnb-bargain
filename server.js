@@ -16,6 +16,11 @@ app.use(
 );
 app.use(bodyParser.json({ type: 'application/*+json' }))
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add 
+
 // DB Config
 const db = require("./config/keys").mongoURI;
 // Connect to MongoDB
