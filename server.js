@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const app = express();
+const routes = require("./routes");
 const users = require("./routes/api/users")
 const mashvisor = require("./routes/api/mashvisor")
 
@@ -15,6 +16,11 @@ app.use(
   })
 );
 app.use(bodyParser.json({ type: 'application/*+json' }))
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // DB Config
 const db = require("./config/keys").mongoURI;
@@ -32,6 +38,7 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 // Routes
+app.use(routes);
 app.use("/api/users", users);
 app.use("/api/mashvisor", mashvisor);
 
