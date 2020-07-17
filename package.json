@@ -1,20 +1,14 @@
 {
   "name": "airbnb-bargain",
   "version": "1.0.0",
-  "engines": {
-    "node": "12.x"
-  },
   "description": "",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd client && npm run build"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -25,7 +19,6 @@
     "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.20",
