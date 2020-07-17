@@ -10,7 +10,8 @@ class Navbar extends Component {
               to="/"
               style={{
                 fontFamily: "monospace",
-                fontSize:"10px"
+                fontSize:"10px",
+                height: "100px"
               }}
               className="col s12 brand-logo center black-text nav-font"
             >
