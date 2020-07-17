@@ -56,7 +56,7 @@ class SearchAirbnbListing extends Component {
                         </div>
                         <div class="input-field col m4 s12">
                         <input name="selectedZipCode" value={this.state.selectedZipCode} onChange={this.onChange} type="text" class="validate"/>
-                        <label>Zip Code</label>
+                        <label>Zip Code (Optional)</label>
                         </div>
                     </div>
                     <button class="btn waves-effect waves-light" type="submit" name="action">Submit

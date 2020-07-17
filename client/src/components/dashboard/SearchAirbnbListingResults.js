@@ -25,8 +25,8 @@ class SearchAirbnbListingResults extends Component {
         if(results === undefined || results.length === 0 || !this.shouldComponentRender()) {
             return <LoadingSpinner/>
         } else {
-            
         return(
+
             results.map(result => {
                 return (
                 <div className="row">
