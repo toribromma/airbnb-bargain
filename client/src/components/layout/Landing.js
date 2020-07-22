@@ -17,7 +17,7 @@ class Landing extends Component {
               Create a (minimal) full-stack app with user authentication via
               passport and JWTs
             </p> */}
-              <img className="materialboxed" width="650" src={landingPic}></img>
+              <img className="materialboxed" width="250" src={landingPic}></img>
             <br />
             <div className="col s6">
               <Link
