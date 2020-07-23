@@ -39,8 +39,8 @@ class SearchAirbnbListingResults extends Component {
                     <div class="card-stacked">
                     <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                         <div class="card-content">
-                        <h4><b>{result.name}</b></h4>
-                        <h5>{result.address}</h5>
+                        <p><b>{result.name}</b></p>
+                        <p>{result.address}</p>
                         <ul class="collection">
                         <li class="collection-item">Price per night: $ {result.night_price}</li>
                         <li class="collection-item"># of Baths: {result.num_of_baths}</li>
