@@ -59,9 +59,11 @@ class SearchAirbnbListing extends Component {
                         <label>Zip Code (Optional)</label>
                         </div>
                     </div>
+                    <div class="col m12 s12">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                     </button>
+                    </div>
                     </form>
                 </div>
             </div>

@@ -25,12 +25,12 @@ return (
             <SearchAirbnbListing/>
             <SearchAirbnbListingResults/>
             <button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
+              // style={{
+              //   width: "100px",
+              //   borderRadius: "1px",
+              //   letterSpacing: "1.5px",
+              //   marginTop: "1rem"
+              // }}
               onClick={this.onLogoutClick}
               className="btn btn-large waves-effect waves-light hoverable blue accent-3"
             >
