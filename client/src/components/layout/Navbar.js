@@ -26,7 +26,7 @@ class Navbar extends Component {
               className="center brand-logo black-text nav-font"
             >
               <i className="material-icons">home</i>
-              air bnb bargain
+              <span className="hide-on-med-and-down">airbnb bargain</span>
             </Link>
             <ul id="nav-mobile" class="left">
               {user.id && 
@@ -41,6 +41,21 @@ class Navbar extends Component {
               className="black-text nav-font"
               >
                 Search
+              </Link>
+              </li>
+              }
+              {user.id && 
+              <li>
+              <Link
+              to="/Dashboard"
+              style={{
+                fontFamily: "monospace",
+                fontSize:"10px",
+                height: "100px"
+              }}
+              className="black-text nav-font"
+              >
+                Dashboard
               </Link>
               </li>
               }

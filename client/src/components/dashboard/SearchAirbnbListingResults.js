@@ -26,27 +26,22 @@ class SearchAirbnbListingResults extends Component {
             return <LoadingSpinner/>
         } else {
         return(
-
             results.map(result => {
                 return (
-                <div className="row">
-                <div class="col s12 m12">
-                    {/* <h2 class="header">Search Results</h2> */}
                     <div class="card center-align">
                     <div class="card-image">
-                        <img src={result.image}/>
+                        <img height={200} width={350} src={result.image}/>
                     </div>
                     <div class="card-stacked">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">star</i></a>
                         <div class="card-content">
                         <p><b>{result.name}</b></p>
                         <p>{result.address}</p>
-                        <ul class="collection">
+                        <ul class="float-right collection">
                         <li class="collection-item">Price per night: $ {result.night_price}</li>
                         <li class="collection-item"># of Baths: {result.num_of_baths}</li>
                         <li class="collection-item"># of Beds: {result.num_of_rooms}</li>
                         <li class="collection-item"># of People: {result.capacity_of_people}</li>
-    
                         </ul>
                         </div>
                         <div class="card-action">
@@ -54,8 +49,7 @@ class SearchAirbnbListingResults extends Component {
                         </div>
                     </div>
                     </div>
-            </div>
-            </div>
+
                 )
             })
            
