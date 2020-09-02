@@ -35,7 +35,7 @@ class SearchAirbnbListing extends Component {
 
     render() {
         return(
-            <div style={{padding: 5}} className="col s12 m12 center-align">
+            <div style={{padding: 5, marginTop: 40, fontFamily: "Balsamiq Sans, cursive"}} className="col s12 m12 center-align">
             <div style={{borderRadius: "0 20px 20px 20px"}} className="card-panel">
                 <span class="card-title"><b>Find an Airbnb Listing</b></span>
                 <div class="row">

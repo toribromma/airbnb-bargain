@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import LoadingSpinner from "../layout/Spinner.js";
 import {getResultsError, getResults, getResultsPending} from '../../reducers/resultsReducers';
 import {Link} from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 class SearchAirbnbListingResults extends Component {
 
     constructor() {
@@ -21,6 +22,15 @@ class SearchAirbnbListingResults extends Component {
 
 
     render() {
+        const notify = () => toast('Saved ♡', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
         const {results, error, pending} = this.props;
         if(results === undefined || results.length === 0 || !this.shouldComponentRender()) {
             return <div></div>
@@ -37,7 +47,18 @@ class SearchAirbnbListingResults extends Component {
                         <img height={100} width={350} src={result.image}/>
                     </div>
                     <div class="card-stacked">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i style={{width: 25, height: 25}} class="material-icons">star</i></a>
+                    <a onClick={notify} class="btn-floating halfway-fab waves-effect waves-light red"><i style={{width: 25, height: 25}} class="material-icons">star</i></a>
+                    <ToastContainer
+                        position="bottom-center"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        />
                         <div class="card-content">
                         <p style={{fontSize:10}}><b>{result.name}</b></p>
                         <p style={{fontSize:9}}>{result.address}</p>

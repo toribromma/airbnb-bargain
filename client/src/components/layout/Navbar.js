@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import PropTypes from "prop-types";
 
-
 class Navbar extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -19,8 +18,8 @@ class Navbar extends Component {
             <Link
               to="/"
               style={{
-                fontFamily: "monospace",
-                fontSize:"10px",
+                fontFamily: "Balsamiq sans, cursive",
+                fontSize:"20px",
                 height: "100px"
               }}
               className="center brand-logo black-text nav-font"
@@ -34,9 +33,11 @@ class Navbar extends Component {
               <Link
               to="/search"
               style={{
-                fontFamily: "monospace",
-                fontSize:"10px",
-                height: "100px"
+                fontFamily: "Balsamiq sans, cursive",
+                fontSize:"12px",
+                height: "100px",
+                fontWeight: 700,
+                marginLeft: 30
               }}
               className="black-text nav-font"
               >
@@ -49,9 +50,10 @@ class Navbar extends Component {
               <Link
               to="/Dashboard"
               style={{
-                fontFamily: "monospace",
-                fontSize:"10px",
-                height: "100px"
+                fontFamily: "Balsamiq sans, cursive",
+                fontSize:"12px",
+                height: "100px",
+                fontWeight: 700
               }}
               className="black-text nav-font"
               >
@@ -64,11 +66,11 @@ class Navbar extends Component {
               {user.id &&
               <li>
               <button
+              style={{marginRight: 30}}
+              className="btn waves-effect waves-light"
               onClick={this.onLogoutClick}
-              className="btn btn-small waves-effect waves-light hoverable blue accent-3"
-              style={{marginRight: 10}}
               >
-              Logout
+              Sign Out
               </button>
               </li>
               }
