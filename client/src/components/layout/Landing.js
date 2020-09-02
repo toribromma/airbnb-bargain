@@ -8,7 +8,7 @@ class Landing extends Component {
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
-              <img className="materialboxed" width="250" src={landingPic}></img>
+              <img alt="landing page pic" className="materialboxed" width="250" src={landingPic}></img>
             <br />
             <div className="col s6">
               <Link

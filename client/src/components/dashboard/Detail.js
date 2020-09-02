@@ -44,7 +44,7 @@ function Detail(props) {
                     <img style={{margin: "0 5px 0 0"}} src="https://via.placeholder.com/149x98"></img>
                     <img style={{margin: "0 0 0 0"}} src="https://via.placeholder.com/147x98"></img>
                 </div>
-                <div style={{fontWeight: "bold", fontSize: 20, margin: 10}}>
+                <div style={{fontWeight: "bold", fontSize: 20}}>
                     <span>room_type</span> <span>hosted by</span> <span>Host</span>
                 </div>
                 <div>

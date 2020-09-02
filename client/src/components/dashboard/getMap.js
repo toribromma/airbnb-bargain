@@ -19,10 +19,10 @@ class GetMap extends Component {
     render() {
         const {results, error, pending} = this.props;
         // const position = [51.505,-0.09]
-        if(results === undefined || results.length === 0 || !this.shouldComponentRender()) {
+        if(results === undefined || results.length === 0 || !this.shouldComponentRender())  {
             return <div></div>
         }
-        if(pending) {
+        else if(pending) {
             return <LoadingSpinner/>
         }
         else {

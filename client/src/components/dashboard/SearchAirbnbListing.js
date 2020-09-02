@@ -37,31 +37,31 @@ class SearchAirbnbListing extends Component {
         return(
             <div style={{padding: 5, marginTop: 40, fontFamily: "Balsamiq Sans, cursive"}} className="col s12 m12 center-align">
             <div style={{borderRadius: "0 20px 20px 20px"}} className="card-panel">
-                <span class="card-title"><b>Find an Airbnb Listing</b></span>
-                <div class="row">
-                    <form onSubmit={this.onSubmit} class="col s12">
-                    <div class="row">
-                        <div class="input-field col s4">
-                        <i class="material-icons prefix">location_city</i>
-                        <input id="icon_prefix" name="selectedCity" value={this.state.selectedCity} onChange={this.onChange} type="text" class="validate"/>
-                        <label for="icon_prefix">City</label>
+                <span className="card-title"><b>Find an Airbnb Listing</b></span>
+                <div className="row">
+                    <form onSubmit={this.onSubmit} className="col s12">
+                    <div className="row">
+                        <div className="input-field col s12 m4">
+                        <i className="material-icons prefix">location_city</i>
+                        <input id="icon_prefix" name="selectedCity" value={this.state.selectedCity} onChange={this.onChange} type="text" className="validate"/>
+                        <label htmlFor="icon_prefix">City</label>
                         </div>
-                        <div class="input-field col s4">
-                        <select onChange={this.onChange} name="selectedState" value={this.state.selectedState} class="browser-default">
-                        <option disabled selected>Choose your option</option>
+                        <div className="input-field col s12 m4">
+                        <select onChange={this.onChange} name="selectedState" value={this.state.selectedState} className="browser-default">
+                        <option disabled>Choose your option</option>
                         {this.states.map(function(object, i){
-                            return <option value = {object}>{object}</option>
+                            return <option key={object} value = {object}>{object}</option>
                         })}
                         </select>
                         </div>
-                        <div class="input-field col s4">
-                        <input name="selectedZipCode" value={this.state.selectedZipCode} onChange={this.onChange} type="text" class="validate"/>
+                        <div className="input-field col s12 m4">
+                        <input name="selectedZipCode" value={this.state.selectedZipCode} onChange={this.onChange} type="text" className="validate"/>
                         <label>Zip Code (Optional)</label>
                         </div>
                     </div>
-                    <div class="col m12 s12">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
+                    <div className="col m12 s12">
+                    <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i className="material-icons right">send</i>
                     </button>
                     </div>
                     </form>

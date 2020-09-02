@@ -6,14 +6,16 @@ render() {
     const { user } = this.props.auth;
     
 return (
-      <div style={{ height: "75vh" }} className="container">
+      <div style={{ height: "75vh", fontFamily: "Balsamiq Sans, cursive" }} className="container">
         <div className="row">
           <div className="col s12 center-align">
-            <h5
-            style={{fontSize: "14px"}}
+            <h1
             >
-              <b>Hey there,</b> {user.name.split(" ")[0]}
-            </h5>
+              <b>Welcome,</b> {user.name.split(" ")[0]}
+            </h1>
+            <h2>
+              Go search for listings!
+            </h2>
             </div>
         </div>
       </div>
