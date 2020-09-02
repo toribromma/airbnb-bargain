@@ -4,8 +4,9 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users")
 const mashvisor = require("./routes/api/mashvisor")
+const listings = require("./routes/api/listings")
 const app = express();
-const routes = require("./routes/index.js")
+// const routes = require("./routes/index.js")
 
 
 // Bodyparser middleare
@@ -40,6 +41,7 @@ require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
 app.use("/api/mashvisor", mashvisor);
+// app.use("/api/listings", listings);
 // app.use(routes);
 
 

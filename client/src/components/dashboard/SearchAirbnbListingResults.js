@@ -19,9 +19,13 @@ class SearchAirbnbListingResults extends Component {
         // more tests
         return true
     }
+    SaveListing(key) {
+        console.log(key)
+    };
 
 
     render() {
+
         const notify = () => toast('Saved ♡', {
             position: "bottom-center",
             autoClose: 5000,
@@ -47,7 +51,11 @@ class SearchAirbnbListingResults extends Component {
                         <img height={100} width={350} src={result.image}/>
                     </div>
                     <div class="card-stacked">
-                    <a onClick={notify} class="btn-floating halfway-fab waves-effect waves-light red"><i style={{width: 25, height: 25}} class="material-icons">star</i></a>
+                    <button
+                    onClick={()=>this.SaveListing(result.id)}
+                    onClick={notify}
+                    key={result.id}
+                    class="btn-floating halfway-fab waves-effect waves-light red"><i style={{width: 25, height: 25}} class="material-icons">star</i></button>
                     <ToastContainer
                         position="bottom-center"
                         autoClose={5000}
@@ -63,7 +71,7 @@ class SearchAirbnbListingResults extends Component {
                         <p style={{fontSize:10}}><b>{result.name}</b></p>
                         <p style={{fontSize:9}}>{result.address}</p>
                         <ul style={{fontSize:8}}>
-                        <li>$ {result.night_price}</li>
+                        <li>${result.night_price}</li>
                         <li>{result.num_of_baths} baths</li>
                         <li>{result.num_of_rooms} rooms</li>
                         <li>Capacity {result.capacity_of_people}</li>
