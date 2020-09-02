@@ -7,13 +7,15 @@ import GetMap from "./getMap"
 class Search extends Component {
     render() {
         return (
-            <div>
+            <div style={{ height: "75vh" }} className="container">
                 <div className="row">
                     <SearchAirbnbListing/>
-                    <GetMap/>
-                    <div style={{overflow:"auto", height: 350, marginTop: 20}} class="col s12 m3">
+                </div>
+                <div className="row">
+                    <div style={{overflow:"auto", height: 350, marginTop: 20}} className="col s12 m4">
                         <SearchAirbnbListingResults/>
                     </div>
+                    <GetMap/>
                 </div>
             </div>
             );

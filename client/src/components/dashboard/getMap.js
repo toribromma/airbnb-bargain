@@ -20,11 +20,15 @@ class GetMap extends Component {
         const {results, error, pending} = this.props;
         // const position = [51.505,-0.09]
         if(results === undefined || results.length === 0 || !this.shouldComponentRender()) {
+            return <div></div>
+        }
+        if(pending) {
             return <LoadingSpinner/>
-        } else {
+        }
+        else {
         return(
-            <div className="col s12 m6 hide-on-small-only">
-            <Map style={{width:600, height:350, marginTop: 30}} center={[results[0].lat, results[0].lon]} zoom={12}>
+            <div className="col s12 m8 hide-on-small-only">
+            <Map style={{height:350, marginTop: 30}} center={[results[0].lat, results[0].lon]} zoom={12}>
                 <TileLayer
                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

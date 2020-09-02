@@ -35,18 +35,18 @@ class SearchAirbnbListing extends Component {
 
     render() {
         return(
-            <div style={{width:300, padding: 20}} className="col s12 m3 center-align">
-            <div className="card-panel">
+            <div style={{padding: 5}} className="col s12 m12 center-align">
+            <div style={{borderRadius: "0 20px 20px 20px"}} className="card-panel">
                 <span class="card-title"><b>Find an Airbnb Listing</b></span>
                 <div class="row">
                     <form onSubmit={this.onSubmit} class="col s12">
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s4">
                         <i class="material-icons prefix">location_city</i>
                         <input id="icon_prefix" name="selectedCity" value={this.state.selectedCity} onChange={this.onChange} type="text" class="validate"/>
                         <label for="icon_prefix">City</label>
                         </div>
-                        <div class="input-field col s12">
+                        <div class="input-field col s4">
                         <select onChange={this.onChange} name="selectedState" value={this.state.selectedState} class="browser-default">
                         <option disabled selected>Choose your option</option>
                         {this.states.map(function(object, i){
@@ -54,7 +54,7 @@ class SearchAirbnbListing extends Component {
                         })}
                         </select>
                         </div>
-                        <div class="input-field col s12">
+                        <div class="input-field col s4">
                         <input name="selectedZipCode" value={this.state.selectedZipCode} onChange={this.onChange} type="text" class="validate"/>
                         <label>Zip Code (Optional)</label>
                         </div>
