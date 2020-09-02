@@ -42,9 +42,7 @@ class Navbar extends Component {
               style={{
                 fontFamily: "Balsamiq sans, cursive",
                 fontSize:"20px",
-                // height: "100px",
                 fontWeight: 700,
-
               }}
               className="right"
               >
@@ -57,7 +55,6 @@ class Navbar extends Component {
               style={{
                 fontFamily: "Balsamiq sans, cursive",
                 fontSize:"20px",
-                // height: "100px",
                 fontWeight: 700
               }}
               className="right"
@@ -79,9 +76,11 @@ class Navbar extends Component {
               Sign Out
               </a>
   }
+                {user.id && 
 <a href="javascript:void(0);" className="icon" onClick={this.myFunction} >
   <i class="fa fa-bars"></i>
 </a>
+  }
 </div>
     );
   }
