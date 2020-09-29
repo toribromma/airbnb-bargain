@@ -1,7 +1,7 @@
 # airbnb bargain
 
 Here's a link to the deployed page through Heroku: <br>
-https://warm-scrubland-68417.herokuapp.com/
+https://airbnbclone22.herokuapp.com/
 
 # Usage
 Mock air bnb website that allows user to search for air bnb rentals anywhere in the United States. 
